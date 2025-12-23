@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div v-if="error" class="mb-4 p-3 bg-red-100 text-red-800 rounded">{{ error }}</div>
+    <div v-if="error" class="mb-4 p-3 bg-red-100 text-red-800 rounded">
+      {{ error }}
+    </div>
 
     <div class="flex items-start gap-4">
       <div class="flex-1">
@@ -10,7 +12,9 @@
         <div class="mt-4">
           <h3 class="font-semibold">Ingredients</h3>
           <ul class="list-disc pl-5 text-gray-700">
-            <li v-for="ing in recipe.ingredients || []" :key="ing">{{ ing }}</li>
+            <li v-for="ing in recipe.ingredients || []" :key="ing">
+              {{ ing }}
+            </li>
           </ul>
         </div>
 
@@ -28,7 +32,10 @@
           <div class="font-semibold">{{ recipe.time ?? 'N/A' }} mins</div>
 
           <div class="mt-4">
-            <button @click="toggleFavorite" :class="['px-3 py-1 rounded-md mt-2 w-full', isFavorite ? 'bg-yellow-400' : 'bg-gray-200']">
+            <button
+              @click="toggleFavorite"
+              :class="['px-3 py-1 rounded-md mt-2 w-full', isFavorite ? 'bg-yellow-400' : 'bg-gray-200']"
+            >
               {{ isFavorite ? 'Unfavorite' : 'Favorite' }}
             </button>
           </div>
@@ -37,7 +44,9 @@
     </div>
 
     <div v-if="loading" class="mt-4 text-gray-500">Loading...</div>
-    <div v-if="!loading && !recipe.id && !error" class="mt-4 text-gray-500">Recipe not found.</div>
+    <div v-if="!loading && !recipe.id && !error" class="mt-4 text-gray-500">
+      Recipe not found.
+    </div>
   </div>
 </template>
 

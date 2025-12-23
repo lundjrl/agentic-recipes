@@ -5,7 +5,12 @@
       <option v-for="t in tags" :key="t" :value="t">{{ t }}</option>
     </select>
 
-    <input type="number" v-model.number="maxTimeLocal" placeholder="Max time (mins)" class="w-32 px-2 py-1 border rounded-md" />
+    <input
+      type="number"
+      v-model.number="maxTimeLocal"
+      placeholder="Max time (mins)"
+      class="w-32 px-2 py-1 border rounded-md"
+    />
   </div>
 </template>
 

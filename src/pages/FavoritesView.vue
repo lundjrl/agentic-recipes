@@ -6,7 +6,9 @@
       <RecipeCard v-for="r in favorites" :key="r.id" :recipe="r" />
     </div>
 
-    <div v-if="favorites.length === 0" class="mt-6 text-gray-500">You have no favorite recipes yet.</div>
+    <div v-if="favorites.length === 0" class="mt-6 text-gray-500">
+      You have no favorite recipes yet.
+    </div>
   </div>
 </template>
 

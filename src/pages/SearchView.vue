@@ -1,19 +1,35 @@
 <template>
   <div>
-    <div v-if="error" class="mb-4 p-3 bg-red-100 text-red-800 rounded">{{ error }}</div>
+    <div v-if="error" class="mb-4 p-3 bg-red-100 text-red-800 rounded">
+      {{ error }}
+    </div>
 
     <SearchBar @search="onSearch" />
 
     <div class="mt-4 flex gap-4 items-center">
-      <Filters :tags="availableTags" v-model:tag="selectedTag" v-model:maxTime="maxTime" />
+      <Filters
+        :tags="availableTags"
+        v-model:tag="selectedTag"
+        v-model:maxTime="maxTime"
+      />
     </div>
 
     <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <RecipeCard v-for="r in displayed" :key="r.id" :recipe="r" @toggleFavorite="onToggleFavorite" />
+      <RecipeCard
+        v-for="r in displayed"
+        :key="r.id"
+        :recipe="r"
+        @toggleFavorite="onToggleFavorite"
+      />
     </div>
 
     <div v-if="loading" class="mt-6 text-center text-gray-500">Loading...</div>
-    <div v-if="!loading && displayed.length === 0" class="mt-6 text-center text-gray-500">No recipes found.</div>
+    <div
+      v-if="!loading && displayed.length === 0"
+      class="mt-6 text-center text-gray-500"
+    >
+      No recipes found.
+    </div>
   </div>
 </template>
 

@@ -3,15 +3,29 @@
     <div class="flex-1">
       <h3 class="font-semibold">{{ recipe.title }}</h3>
       <p class="text-sm text-gray-600 mt-1">{{ recipe.description }}</p>
-      <div class="mt-2 text-xs text-gray-500">Time: {{ recipe.time ?? 'N/A' }} mins</div>
+      <div class="mt-2 text-xs text-gray-500">
+        Time: {{ recipe.time ?? 'N/A' }} mins
+      </div>
       <div class="mt-2 flex flex-wrap gap-2">
-        <span v-for="t in recipe.tags || []" :key="t" class="text-xs bg-gray-100 px-2 py-0.5 rounded">{{ t }}</span>
+        <span
+          v-for="t in recipe.tags || []"
+          :key="t"
+          class="text-xs bg-gray-100 px-2 py-0.5 rounded"
+          >{{ t }}</span
+        >
       </div>
     </div>
 
     <div class="mt-4 flex items-center justify-between">
-      <button @click="toggleFavorite" :class="['px-3 py-1 rounded-md', isFavorite ? 'bg-yellow-400' : 'bg-gray-200']">{{ isFavorite ? 'Unfavorite' : 'Favorite' }}</button>
-      <router-link :to="`/recipes/${recipe.id}`" class="text-sm text-blue-600">Details</router-link>
+      <button
+        @click="toggleFavorite"
+        :class="['px-3 py-1 rounded-md', isFavorite ? 'bg-yellow-400' : 'bg-gray-200']"
+      >
+        {{ isFavorite ? 'Unfavorite' : 'Favorite' }}
+      </button>
+      <router-link :to="`/recipes/${recipe.id}`" class="text-sm text-blue-600"
+        >Details</router-link
+      >
     </div>
   </div>
 </template>
